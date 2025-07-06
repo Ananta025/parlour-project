@@ -2,7 +2,7 @@
   "name": "backend-parlour-api",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "nodemon --ext ts --watch . --exec \"node --import tsx\" server.ts",
     "build": "tsc",
