@@ -13,7 +13,7 @@ interface AttendancePunchData {
 
 export const registerAttendanceSocket = (io: Server): void => {
   io.on('connection', (socket: Socket) => {
-    console.log(`Socket connected: ${socket.id} | User: ${socket.data?.userId || 'Unauthenticated'}`);
+    console.log(`Socket connected: ${socket.id} | User: ${socket.handshake.auth?.userId || 'Unauthenticated'}`);
 
     // Handle attendance punch events
     socket.on('attendance:punch', async (data: AttendancePunchData, callback?: (response: SocketResponse) => void) => {
